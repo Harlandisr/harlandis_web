@@ -1,10 +1,133 @@
 {% extends "base.html" %}{% block title %} VIEW ALL {% endblock %} {% block content%}
 <body>
-    <form method="POST">
+
+    <style>
+      
+form {
+        box-sizing: content-box;
+        background-color: rgba(255, 255, 255, 0.545);
+        font-family: "Gill Sans", sans-serif;
+
+}
+
+body {
+        padding: 20%;
+ }
+
+.wrapper {
+  max-width: 500px;
+  margin: 20 auto;
+  padding: 1em;
+  background: #ffffff00;
+  border: 1px solid #c1c1c1;
+}
+
+.transparente{
+opacity: 0.8;
+-moz-opacity: 0.8;
+filter: alpha(opacity=80);
+-khtml-opacity: 0.8;
+font-weight: bold;
+color: rgb(246, 244, 241);
+}
+
+h3 {
+  margin: 0;
+}
+
+input:focus,
+textarea:focus {
+  outline: 3px solid rgb(10, 71, 22);
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  border: 1px solid rgba(213, 245, 251, 0.714);
+}
+
+.wrapper > * {
+  padding: 1em;
+}
+
+form label {
+  display: grid;
+}
+
+form p {
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  padding: 1em;
+}
+
+button {
+  background: rgb(67, 123, 70);
+  width: 100%;
+  border: 0;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+button:hover, button:focus {
+  background: rgb(188, 229, 184);
+  outline: 0;
+  color: black
+  
+}
+
+form {
+    
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  grid-column: 1 / 2;
+}
+form p {
+  grid-column: 1 / 2;
+}
+
+.input-file-wrapper {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+video {
+
+width: 100;
+}
+
+.absolute {
+    min-width: 100%;
+    min-height: 100%;
+    top: 0;
+    right: 0;
+    position: fixed;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.407);
+
+    }
+
+        </style>
+        
+    <!--<form method="POST" action="#" class="form">
+        <fieldset>
     <br><br>
-    <h3 aling="center">Añadir nuevo usuario</h3>
-    <div class="form-group">
-        <label for="Name"> Introduzca el nombre</label>
+    <h3 aling="center">Registro nuevo usuario</h3>
+    <div class="form">
+        <label for="Name"> Nombre:</label>
         <input type="text"   
             class="form-control"
             id="Name"
@@ -12,7 +135,7 @@
             placeholder="Nombre"/>
     </div>
     <div class="form-group">
-        <label for="Surname"> Introduzca el apellido</label>
+        <label for="Surname"> Apellido:</label>
         <input type="text"   
             class="form-control"
             id="Surname"
@@ -20,7 +143,7 @@
             placeholder="Apellido"/>
     </div>
     <div class="form-group">
-        <label for="dni"> Introduzca su DNI</label>
+        <label for="dni"> DNI:</label>
         <input type="text"   
             class="form-control"
             id="dni"
@@ -28,7 +151,7 @@
             placeholder="DNI"/>
     </div>
     <div class="form-group">
-        <label for="telefono"> Introduzca su teléfono</label>
+        <label for="telefono"> Teléfono:</label>
         <input type="text"    
             class="form-control"
             id="telefono"
@@ -36,7 +159,7 @@
             placeholder="Teléfono"/>
     </div>
     <div class="form-group">
-        <label for="email"> Introduzca su correo electrónico</label>
+        <label for="email"> Correo electrónico:</label>
         <input type="text"    
             class="form-control"
             id="email"
@@ -44,23 +167,36 @@
             placeholder="E-mail"/>
     </div>
     <div class="form-group">
-        <label for="contrasena1"> Introduzca su contraseña</label>
+        <label for="contrasena1"> Contraseña:</label>
         <input type="password"    
             class="form-control"
             id="contrasena1"
             name="contrasena1"
-            placeholder="contraseña"/>
+            placeholder="******"/>
     </div>
     <div class="form-group">
-        <label for="contrasena2"> Vuelva a introducir su contraseña</label>
+        <label for="contrasena2"> Vuelva a introducir su contraseña:</label>
         <input type="password"    
             class="form-control"
             id="contrasena2"
             name="contrasena2"
-            placeholder="contraseña"/>
+            placeholder="******"/>
     </div>
+    <br>
     <button type="submit" class="btn btn-primary">Registrar</button>
+</fieldset>
+    </form>-->
+<header>
+    <audio controls class="absolute">
+        <source src="xbHPTPUpQ1I" type="audio"  data-loop=“0” position="top">
+    </audio>
+        <video class="absolute" onloadedmetadata="this.muted=true" autoplay loop>
+          <source src="formulario1.mp4" >
+        </video>
+</header>
+
 </body>
+
 <script>
     function validateNID(DIN){
     var DINValidate = true;
@@ -81,4 +217,129 @@ function validateEmail(email) {
         alert('El correo introducido no es correcto ')
 }
 </script>
+
+<form method="POST" action="#" class="form">
+        <fieldset class="transparente">
+    <br>
+    <br>
+    <h3 aling="center">Registro nuevo usuario</h3>
+    <br>
+    <div  class="transparente">
+        <label for="Name"> Nombre:</label>
+        <input type="text"   
+            class="form-control"
+            id="Name"
+            name="Name"
+            placeholder="Nombre"/>
+    </div>
+    <div class="transparente">
+        <label for="Surname"> Apellido:</label>
+        <input type="text"   
+            class="form-control"
+            id="Surname"
+            name="Surname"
+            placeholder="Apellido"/>
+    </div>
+    <div class="transparente">
+        <label for="dni"> DNI:</label>
+        <input type="text"   
+            class="form-control"
+            id="dni"
+            name="dni"
+            placeholder="DNI"/>
+    </div>
+    <div class="transparente">
+        <label for="telefono"> Teléfono:</label>
+        <input type="text"    
+            class="form-control"
+            id="telefono"
+            name="telefono"
+            placeholder="Teléfono"/>
+    </div>
+    <div class="transparente">
+        <label for="email"> Correo electrónico:</label>
+        <input type="text"    
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="E-mail"/>
+    </div>
+    <div class="transparente">
+        <label for="contrasena1"> Contraseña:</label>
+        <input type="password"    
+            class="form-control"
+            id="contrasena1"
+            name="contrasena1"
+            placeholder="******"/>
+    </div>
+    <div class="transparente">
+        <label for="contrasena2"> Vuelva a introducir su contraseña:</label>
+        <input type="password"    
+            class="form-control"
+            id="contrasena2"
+            name="contrasena2"
+            placeholder="******"/>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Registrar</button>
+    {%if User_register%}
+    <h1> Usuario registrado correctamente</h1>
+    {%endif%}
+</fieldset>
+    </form>
+
+
+
+
+<br>
+<br>
+<form method="POST" action="#" class="form">
+    <fieldset>
+    <div class="transparente">
+        <h3 >FORMULARIO DE CONTACTO</h3>
+          <p>
+            <label for=""></label>
+            <input type="text" placeholder="Nombre*" required>
+          </p>
+          <br>
+          <p>
+            <label for="">
+                <input type="email" placeholder="E-mail*" required>
+            </label>
+          </p>
+          <br>
+          <p>
+            <label for="">
+                <input type="text" placeholder="Teléfono" required>
+            </label>
+          </p>
+          <br>
+          <p class="input-file-wrapper">
+            <textarea name="texto" placeholder="Mensaje*" required></textarea>
+          </p>
+          <p>
+            <label for="">
+                <p> <input name="llamarcliente" type="checkbox">Marque la casilla si desea que le llamemos </p>
+            </label>
+          </p>
+          <p>
+            <button> Enviar</button>
+          </p>
+       
+      
+    <fieldset class="transparente">
+<div class="form" >
+    <h4> CONTACTO</h4>
+    <p> arlandisrh@gmail.com</p>
+    <p> Tel: 915623626 / 690785596</p>
+
+    <hr>
+
+    <h4> HORARIOS</h4>
+    <p> Lun - Vie: 09:00 - 17:00 horas</p>
+    <p> Sáb - Dom: 10:00 - 14:00 horas</p>
+</div>
+</fieldset>
+</form>
+</body>
 {% endblock%}

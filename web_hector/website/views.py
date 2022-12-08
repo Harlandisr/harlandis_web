@@ -1,8 +1,6 @@
-from flask import Blueprint,render_template, request
-from werkzeug.security import generate_password_hash
-from .models import Usuario
-from ..instance import db
-
+from flask import Blueprint,render_template, request, flash 
+from bbdd import get_check_email, insert_user 
+from flask_login import current_user
 views = Blueprint('views', __name__)
 
 @views.route('/')
@@ -20,17 +18,11 @@ def signup():
         telefono= request.form.get('telefono')
         email= request.form.get('email')
         if(contrasena1 == contrasena2): 
-                new_user = Usuario(name=name, 
-                                    password=generate_password_hash(contrasena1, 
-                                    method='sha256'), 
-                                    dni=generate_password_hash(dni, 
-                                    method='sha256'),
-                                    telefono= telefono,
-                                    email=generate_password_hash(email, 
-                                    method='sha256'),
-                                    surname=surname)
-                db.session.add(new_user)
-                db.session.commit()
+            if get_check_email(email):
+                insert_user(name, contrasena1, dni, telefono, email, surname)
+                flash('Logged in successfully!', category='success')
+                return render_template("signup.html", User_register=current_user)
+
         
     return render_template("signup.html")
 

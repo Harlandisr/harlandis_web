@@ -1,0 +1,124 @@
+{% extends "base.html" %}{% block title %} VIEW ALL {% endblock %} {% block content%}
+<body>
+
+    <style>
+      
+        form {
+    box-sizing: content-box;
+    background-color: rgba(255, 255, 255, 0);
+    font-family: "Gill Sans", sans-serif;
+  }
+  
+  body {
+    padding: 20%;
+  }
+  
+  .wrapper {
+    max-width: 500px;
+    margin: 20 auto;
+    padding: 1em;
+    background: #ffffff00;
+    border: 1px solid #c1c1c1;
+  }
+  
+  .transparente{
+  opacity: 0.8;
+  -moz-opacity: 0.8;
+  filter: alpha(opacity=80);
+  -khtml-opacity: 0.8;
+  }
+  
+  h3 {
+    margin: 0;
+  }
+  
+  input:focus,
+  textarea:focus {
+    outline: 3px solid rgb(70, 153, 64);
+  }
+  
+  input,
+  textarea,
+  button {
+    width: 100%;
+    border: 1px solid rgba(213, 245, 251, 0.714);
+  }
+  
+  .wrapper > * {
+    padding: 1em;
+  }
+  
+  form label {
+    display: grid;
+  }
+  
+  form p {
+    margin: 0;
+  }
+  
+  button,
+  input,
+  textarea {
+    padding: 1em;
+  }
+  
+  button {
+    background: rgb(67, 123, 70);
+    width: 100%;
+    border: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+  }
+  button:hover, button:focus {
+    background: rgb(188, 229, 184);
+    outline: 0;
+    color: black
+    
+  }
+  
+  form {
+      
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+    grid-column: 1 / 2;
+  }
+  form p {
+    grid-column: 1 / 2;
+  }
+  
+  .input-file-wrapper {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  
+          </style>
+    <form method="POST" action="#" class="form">
+        <fieldset >
+    <br>
+    <br>
+    <h3 aling="center"> Acceso a su cuenta</h3>
+    <br>
+    <div class="form-group">
+        <label for="email"> Usuario:</label>
+        <input type="text"    
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="E-mail"/>
+    </div>
+    <div class="form-group">
+        <label for="contrasena1"> Contraseña:</label>
+        <input type="password"    
+            class="form-control"
+            id="contrasena1"
+            name="contrasena1"
+            placeholder="******"/>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</fieldset>
+    </form>
+</body>
+{% endblock%}
