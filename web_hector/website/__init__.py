@@ -1,6 +1,10 @@
 from flask import Flask
 from os import path
 from flask_sqlalchemy import SQLAlchemy
+from datetime import timedelta
+import flask_login
+
+
 db = SQLAlchemy()
 DB_NAME = "database.db"
 def create_app():
@@ -9,14 +13,14 @@ def create_app():
 
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     
-   #app.config['PERMANENT_SESSION_LIFETIME'] =  timedelta(minutes=5)
+    app.config['PERMANENT_SESSION_LIFETIME'] =  timedelta(minutes=5)
+    
     db.init_app(app)
 
+
     from .views import views
-    from .auth import auth
-    import bbdd 
+    from .auth import auth 
     app.register_blueprint(views, url_prefix = '/')
-    app.register_blueprint(bbdd, url_prefix = '/')
     app.register_blueprint(auth, url_prefix = '/')
 
     create_database(app)

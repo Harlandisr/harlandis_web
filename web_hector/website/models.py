@@ -16,7 +16,7 @@ class Caballo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150))
     meters = db.Column(db.Float)
-    user_id = db.Column(db.Integer, db.foreignKey('usuario.id')) #Creacion de la foreign key
+    user_id = db.Column(db.Integer, db.ForeignKey('usuario.id')) #Creacion de la foreign key
 
 
 

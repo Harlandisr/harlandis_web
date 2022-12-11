@@ -26,13 +26,12 @@ def insert_user( name, contrasena, dni, telefono, email, surname):
                             dni=generate_password_hash(dni, 
                             method='sha256'),
                             telefono= telefono,
-                            email=generate_password_hash(email, 
-                            method='sha256'),
+                            email=email, 
                             surname=surname)
         db.session.add(new_user)
         db.session.commit()
-        login_user(new_user, remember=True)
-        return True
+        
+        return new_user
     except:
         return False
 
@@ -48,7 +47,7 @@ def get_check_email(email):
     """
     try:
         output_email =  Usuario.query.with_entities(Usuario.email).filter_by(email = email)
-        if output_email: 
+        if len([x for x in output_email]) > 0: 
             return False
         else: 
             return True
