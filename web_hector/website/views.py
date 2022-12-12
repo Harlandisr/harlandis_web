@@ -8,7 +8,7 @@ views = Blueprint('views', __name__)
 
 @views.route('/')
 def home():
-    return render_template("home.html")
+    return render_template("home.html", User_register=current_user)
 
 @views.route('/signup' , methods=['POST', 'GET'])
 def signup(): 
@@ -26,7 +26,7 @@ def signup():
                 login_user(new_user, remember=True)
                 flash('Logged in successfully!', category='success')
                 return render_template("signup.html", User_register=current_user)
-    return render_template("signup.html")
+    return render_template("signup.html", User_register=current_user)
 
 @views.route('/login' , methods=['POST', 'GET'])
 def login(): 
@@ -41,4 +41,10 @@ def login():
                     login_user(user, remember=True)
                     session.permanent = True
                     return render_template("home.html", User_register=current_user)
-    return render_template("login.html")
+    return render_template("login.html", User_register=current_user)
+
+@views.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('views.home'))

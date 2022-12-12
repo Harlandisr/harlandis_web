@@ -16,7 +16,7 @@ def insert_user( name, contrasena, dni, telefono, email, surname):
         email -> string \n
         surname ->string \n
     OUTPUTS
-        suscessfull -> true \n
+        suscessfull -> new user \n
         wrong -> false 
     """
     try:
