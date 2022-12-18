@@ -48,3 +48,9 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('views.home'))
+
+@views.route('/ejemplares')
+def ejemplares():
+    return render_template("ejemplares.html", User_register=current_user)
+
+

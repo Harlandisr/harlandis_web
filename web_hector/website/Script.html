@@ -1,0 +1,79 @@
+<script>
+    function validateNID(DIN) {
+        var DINValidate = true;
+        var value = (DIN.substring(0, 8) % 23);
+        var letter = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"]
+        if (DIN.substring(8, 9) != letter[value]) {
+            alert('El documento introducido no es correcto')
+            DINValidate = false;
+        }
+        return DINValidate
+    }
+    function validateEmail(email) {
+
+        var re = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/
+        if (re.test(email))
+            document.getElementById('email').innerHTML = email
+        else
+            alert('El correo introducido no es correcto ')
+    }
+</script>
+
+<form method="POST" action="#" class="form">
+    <fieldset class="transparente">
+
+        <br>
+        <br>
+        <form method="POST" action="#" class="form">
+            <fieldset>
+                <div class="transparente">
+                    <h3 class="h3">FORMULARIO DE CONTACTO</h3>
+                    <p>
+                        <label for=""></label>
+                        <input type="text" placeholder="Nombre*" required>
+                    </p>
+                    <br/>
+                    <p>
+                        <label for="">
+                            <input type="email" placeholder="E-mail*" required>
+                        </label>
+                    </p>
+                    <br/>
+                    <p>
+                        <label for="">
+                            <input type="text" placeholder="Teléfono" required>
+                        </label>
+                    </p>
+                    <br/>
+                    <p class="input-file-wrapper">
+                        <textarea name="texto" placeholder="Mensaje*" required></textarea>
+                    </p>
+                    <p>
+                        <br/>
+                        <div for="">
+                        <input name="llamarcliente" type="checkbox" />
+                        <label for="">Marque la casilla si desea que le llamemos</label>
+                        </div>
+                        <br/>
+                    </p>
+                    <p>
+                        <button> Enviar</button>
+                    </p>
+                    <br/>
+
+                    <fieldset class="transparente">
+                        <aside class="aside">
+                        <div class="form">
+                            <h4> CONTACTO</h4>
+                            <p> arlandisrh@gmail.com</p>
+                            <p> Tel: 915623626 / 690785596</p>
+
+                            <hr>
+
+                            <h4> HORARIOS</h4>
+                            <p> Lun - Vie: 09:00 - 17:00 horas</p>
+                            <p> Sáb - Dom: 10:00 - 14:00 horas</p>
+                        </div>
+                    </aside>
+                    </fieldset>
+        </form>

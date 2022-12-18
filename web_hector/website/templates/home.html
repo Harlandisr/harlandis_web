@@ -1,150 +1,220 @@
-{% extends "base.html" %}{% block title %} HOME {% endblock %} {% block content%}
-<!DOCTYPE html>
+{% extends "base.html" %}{% block title %} VIEW ALL {% endblock %} {% block content%}
+<!DOCTYPE HTML>
 <html>
-    <head>
-		<meta charset="UTF-8">
-		<title>HOME</title>  
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" 
-        rel="stylesheet" 
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" 
-        crossorigin="anonymous"
-        />
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" 
-        crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" 
-        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" 
-        crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" 
-        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" 
-        crossorigin="anonymous"></script>    
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0-rc.1/Chart.bundle.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-</head>
-<!-- HEADER -->    
-<body>
-<style background-color : #2C1C04>  </style>
-   <h1> HAR</h1>
-   <h3> Harlandis R.</h3>
-    <div class="logotitle animated fadeInDown">
-            <div class="title">
-                <a href="/">home</a>
-            </div>
-	            
-	 </div>   
-        <div class="nav">
-         
-           <li><a href="{URL}"></a></li>
-           <li><a href="/ask">Ask</a></li>
-            <li><a href="/submit">Submit</a></li>    
-            <li><a href="/archive">archive & categories</a></li>
-            <li><a href="{RSS}">RSS</a></li>
-        
-    </div>
-    
-
-<!-- CONTENT -->    
-
-<div class = "autopagerize_page_element" >   
-        <div class="posts">
-          
-              <div class="media"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" /></div>
-              <div class="photoCaption"></div>
-        
-          
-      
-              <div class="media"></div>
-              <div class="caption"></div>
-    
-           
-         
-             <div class="audioleft">
-                <div class="audioc">
-                <div class="audio"></div>
-                </div>
-             </div>
-             <div class="audioright"> 
-                <div class="audioCaption"><b></b>
-<p>&mdash;</p>
-                </div>
-             </div>
-             <div class="audioClear"></div>
-             <div class="audioContainer">
-               
-             </div>
-          
-             <div class="media"></div>
-             <div></div>
-        
-          
-        
-             <h3>asked:</h3>
-           </div>
-           
-        <div class="header-posts">
-
-              <h2><a href="{Permalink}"></a></h2>
-              <h2><a href="{URL}" {Target}> &rarr;</a></h2>
-              <div></div>
-              <div class="quote"></div>
-             <div id="quoteSource"><p>&mdash; </p></div>          
-            <h2></h2>
-             <ul class="chat">
-                <li><strong></strong> </li>
-             </ul>
-          </div>
-          
-                    <div class="tags">
-                            <li>
-                                <a href="{TagURL}">#</a>
-                            </li>
-                    </div>
-        
-        <div class="meta">
-           <div class="datenotes">
-           <span class="date"><a href="{Permalink}"></a></span>
-          <a href="{Permalink}#notes"></a>
-
-           
-           </div>
-           
-           <div class="like-button"></div>
-           
-           <div class="reblog-button"></div>
-           
-        </div>
-               
-</div>
-
-<!-- PAGINATION --> 
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HAR Best Horses </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <div class="pagination">
-           <ul class="clearfix">
-             <li><a href="{PreviousPage}" id="newer">Newer</a></li>
-             <li><a href="{URL}" class="active"></a></li>
-             <li><a href="{URL}"></a></li>
-             <li><a href="{NextPage}" id="older">Older</a></li>
-           </ul>
-        </div>
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
 
+	
+	<link rel="stylesheet" href="css/portada.css">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
 
-<!-- FOOTER --> 
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
 
-<div class="footer">
-    <br>
-              <strong><p><a href="http://themes.theultralinx.com/?utm_source=ultrazen%20theme&utm_medium=link&utm_campaign=ultrazen%20theme%20footer%20credit">UltraZen Theme by UltraLinx</a></p></strong>
-     </div>
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 
-</div>
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
 
-</body>
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+		
+	<!-- HEADER -->
+	<div class="fh5co-loader"></div>
+	<div id="page">
+	
+	<!--  FIN HEADER -->
+	
+	<div id="" class="js-fullheight">
+		<video class="mediacaballo" onloadedmetadata="this.muted=true" autoplay loop>
+			<source src="images/portada1.mp4">
+		</video>
+	</div>
+
+	<div id="fh5co-product">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Mejores Ejemplares</h2>
+					<p>Gracias a la pasión que sentimos en el equipo HAR, seleccionamos los mejores ejemplares. Estamos especializados en los caballos PRE (Pura Raza Española), caballos de alta calidad, nobles, con buena planta y templanza. Una de las razas más valoradas del mundo. Su belleza resulta de su cuidado y de respetar sin cruces y de sangre pura, con la genética que pasará de generación en generación.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url(images/caballos/caballo-1.jpeg);">
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html"> PRE</a></h3>
+							<span class="price">€8500</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url(images/caballos/caballo-2.jpeg);">
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html"> Purasangre</a></h3>
+							<span class="price">€10000</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url(images/caballos/caballo-3.jpeg);">
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html">Lusitano</a></h3>
+							<span class="price">€15000</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url(images/caballos/caballo-4.jpeg);">
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html"> Frisón</a></h3>
+							<span class="price">€22000</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url(images/caballos/caballo-5.jpeg);">
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html"> Árabe</a></h3>
+							<span class="price">€40000</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url(images/caballos/caballo-6.jpeg);">
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html"> PRE</a></h3>
+							<span class="price">€30000</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- FOOTER -->
+	<footer id="fh5co-footer" role="contentinfo">
+		<div class="container">
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block">Héctor Arlandis Web &copy; 2022. All rights reserved.</small> 
+					</p>
+					<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="https://twitter."><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	<!-- FIN FOOTER -->
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+
+	</body>
 </html>
 {% endblock%}
+
